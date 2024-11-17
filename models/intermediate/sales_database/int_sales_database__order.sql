@@ -3,6 +3,7 @@ with order_item_grouped_by_order as (
 select order_id,
     user_id,
     order_status,
+    3 as column_3,
     order_created_at,
     order_approved_at,
     sum(total_order_item_amount) as total_order_amount,
