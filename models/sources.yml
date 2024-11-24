@@ -40,3 +40,4 @@ sources:
       - name: products
       - name: stocks
       - name: brands
+      - name: city_population
