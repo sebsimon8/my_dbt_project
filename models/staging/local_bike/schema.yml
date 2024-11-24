@@ -1,0 +1,32 @@
+models:
+  - name: stg_local_bike__brands
+    description: "This model contains information about the brand names"
+    columns:
+      - name: brand_id
+        description: "Primary key, unique identifier for each brand."
+        tests:
+            - unique
+            - not_null
+      - name: brand_name
+        description: "Brand name associated to each id."
+
+  - name: stg_local_bike__order_items
+    description: "This model contains information about the items from each order: product, quantity, price."
+    columns:
+      - name: order_item_id
+        description: "Primary key, unique identifier for each items in the order."
+        tests:
+            - unique
+            - not_null
+      - name: total_order_item_amount
+        description: "Total amount associated to each same items in an order."
+        tests:
+            - not_null
+      - name: order_id
+        description: "Foreign key associating from each order, that contains different items."
+        tests:
+          - relationships:
+              name: order_id_foreign_key_in_stg_local_bike__orders
+              to: ref('stg_local_bike__orders')
+              field: order_id
+
