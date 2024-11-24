@@ -13,3 +13,4 @@ FROM {{ref('int_local_bike__order_items')}} AS oi
 LEFT JOIN {{ref('stg_local_bike__city_population')}} AS cp on cp.city=oi.store_city
 WHERE order_status='delivered'
 GROUP BY 1,2,3
+ORDER BY 1

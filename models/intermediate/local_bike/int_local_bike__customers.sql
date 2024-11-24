@@ -9,7 +9,7 @@ SELECT
     WHEN ROUND(SUM(total_order_item_amount),0) >7228 THEN 'VIP_customer'
     WHEN ROUND(SUM(total_order_item_amount),0) <1301 THEN 'Small_customer' 
     ELSE 'Average_customer'
-  END AS customer_spending_status
+  END AS customer_segment
 
 FROM {{ref('int_local_bike__order_items')}} 
 WHERE order_status='delivered' 
