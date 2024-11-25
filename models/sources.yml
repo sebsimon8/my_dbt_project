@@ -1,10 +1,6 @@
 version: 2
 
 sources:
-  - name: googles_analytics_4
-    schema: google_analytics_4
-    tables:
-      - name: events_20210131
       
   - name: google_sheets
     schema: google_sheets
