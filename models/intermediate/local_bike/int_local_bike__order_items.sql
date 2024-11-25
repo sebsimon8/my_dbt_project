@@ -11,6 +11,7 @@ SELECT
     oi.percent_discount,
     oi.total_order_item_amount,
     o.order_status,
+    o.order_date,
     c.customer_id,
     store.store_name,
     store.store_city,
